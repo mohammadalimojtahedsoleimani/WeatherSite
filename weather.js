@@ -35,6 +35,12 @@ form.addEventListener("submit", evt => {
           `;
             li.innerHTML = markup;
             list.append(li);
+            msg.innerText = "";
         })
+        .catch(()=>{
+            msg.innerText = "Search for the valid city";
+        })
+    input.value = ""
+
 
 })
