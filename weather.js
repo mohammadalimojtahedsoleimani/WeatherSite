@@ -33,6 +33,8 @@ form.addEventListener("submit", evt => {
     </figcaption>
 </figure>
           `;
+            li.innerHTML = markup;
+            list.append(li);
         })
 
 })
