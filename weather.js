@@ -16,6 +16,23 @@ form.addEventListener("submit", evt => {
         .then(response => response.json())
         .then(data => {
           const {main,name,sys,weather} = data
+            const icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${weather[0]["icon"]}.svg`
+            const li = document.createElement("li");
+          li.classList.add("city");
+            console.log(data)
+          const markup = `
+          <h2 class="city-name" data-name = ${name},${sys.country}>
+<span>${name}</span>
+<span>${sys.country}</span>
+</h2>
+<div class="city-temp">${Math.round(main.temp)}</div>
+<figure>
+    <img src="${icon}" alt="city" class="city-icon">
+    <figcaption>
+        ${weather[0]["description"]}
+    </figcaption>
+</figure>
+          `;
         })
 
 })
